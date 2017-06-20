@@ -4,8 +4,6 @@ MOV a @b (1)
   R=b,D=a
 MOV @a @b (2)
   S=b,Z=a
-DMOV a @b c @d (2)
-  R=b,D=a,S=d,E=c
 SWP @a @b (3)
   S=b,Z=a,crude-oil=1,X=b,T=a
 ADD @a b (1)
