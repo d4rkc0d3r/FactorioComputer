@@ -11,7 +11,7 @@ ADD @a @b (2)
 ADD @a @b @c (3)
   crude-oil=1,X=a,Y=b,T=c
 ADD @a @b @c (4) generic
-  empty-barrel=1,X=a,Y=b,U=c
+  empty-barrel=1
 SUB @a b (1)
   A=a,D=-b
 SUB @a @b (3)
