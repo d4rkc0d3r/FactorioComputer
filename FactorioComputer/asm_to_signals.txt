@@ -4,6 +4,8 @@ MOV a @b (1)
   R=b,D=a
 MOV @a @b (2)
   S=b,Z=a
+DMOV a @b c @d (2)
+  R=b,D=a,S=d,E=c
 ADD @a b (1)
   A=a,D=b
 ADD @a @b (2)
