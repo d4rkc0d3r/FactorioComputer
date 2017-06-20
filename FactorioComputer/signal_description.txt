@@ -1,14 +1,20 @@
 RAM:
   A: address to add D to
-  B: A delayed by 2 ticks
-  C: A delayed by 3 ticks
+  1: A delayed by 1 tick
+  2: A delayed by 2 ticks
+  3: A delayed by 3 ticks
   D: data to write to A
+  E: D delayed by 1 tick
   R: address to write D to
-  S: R delayed by 2 ticks
-  T: R delayed by 3 ticks
+  S: R delayed by 1 ticks
+  T: R delayed by 2 ticks
+  U: R delayed by 3 ticks
   X: address to read IN1
+  signal-yellow = -1: subtract D from IN1
   Y: address to read IN2
-  Z: address to read OUTADDR
+  signal-pink = -1: subtract D from IN2
+  Z: address to read directly to D
+  signal-cyan = -1: subtract D from D
   signal-black = -1: (3) 0 all cells
   
 ROM:
@@ -17,23 +23,23 @@ ROM:
 ALU:
   signal-green: IN1 for 4 tick operations
   signal-red: IN2 for 4 tick operations
-  crude-oil: (3) add (crude-oil * IN1) + (crude-oil * IN2) to B/S
-  water: (3) add water / IN1 to B/S
-  steam: (3) add IN1 / steam to B/S
-  heavy-oil: (3) add heavy-oil % IN1 to B/S
-  light-oil: (3) add IN1 % light-oil to B/S
-  petroleum-gas: (3) add petroleum-gas AND IN1 to B/S
-  empty-barrel = 1: (4) add IN1 + IN2 to C/T
-  crude-oil-barrel = 1: (4) add IN1 - IN2 to C/T
-  heavy-oil-barrel = 1: (4) add IN1 * IN2 to C/T
-  light-oil-barrel = 1: (4) add IN1 / IN2 to C/T
-  lubricant-barrel = 1: (4) add IN1 % IN2 to C/T
-  petroleum-gas-barrel = 1: (4) add IN1 ^ IN2 to C/T
-  sulfuric-acid-barrel = 1: (4) add IN1 << IN2 to C/T
-  water-barrel = 1: (4) add IN1 >> IN2 to C/T
-  electronic-circuit = 1: (4) add IN1 AND IN2 to C/T
-  advanced-circuit = 1: (4) add IN1 OR IN2 to C/T
-  processing-unit = 1: (4) add IN1 XOR IN2 to C/T
+  crude-oil: (3) write (crude-oil * IN1) + (crude-oil * IN2) to instruction line as D
+  water: (3) write water / IN1 to instruction line as D
+  steam: (3) write IN1 / steam to instruction line as D
+  heavy-oil: (3) write heavy-oil % IN1 to instruction line as D
+  light-oil: (3) write IN1 % light-oil to instruction line as D
+  petroleum-gas: (3) write petroleum-gas AND IN1 to instruction line as D
+  empty-barrel = 1: (4) write IN1 + IN2 to instruction line as D
+  crude-oil-barrel = 1: (4) write IN1 - IN2 to instruction line as D
+  heavy-oil-barrel = 1: (4) write IN1 * IN2 to instruction line as D
+  light-oil-barrel = 1: (4) write IN1 / IN2 to instruction line as D
+  lubricant-barrel = 1: (4) write IN1 % IN2 to instruction line as D
+  petroleum-gas-barrel = 1: (4) write IN1 ^ IN2 to instruction line as D
+  sulfuric-acid-barrel = 1: (4) write IN1 << IN2 to instruction line as D
+  water-barrel = 1: (4) write IN1 >> IN2 to instruction line as D
+  electronic-circuit = 1: (4) write IN1 AND IN2 to instruction line as D
+  advanced-circuit = 1: (4) write IN1 OR IN2 to instruction line as D
+  processing-unit = 1: (4) write IN1 XOR IN2 to instruction line as D
   
 BRANCH CONTROL:
   L: address for is lower
