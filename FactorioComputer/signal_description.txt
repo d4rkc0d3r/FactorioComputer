@@ -9,31 +9,31 @@ RAM:
   X: address to read IN1
   Y: address to read IN2
   Z: address to read OUTADDR
-  BLACK = -1: (3) 0 all cells
+  signal-black = -1: (3) 0 all cells
   
 ROM:
   I: address to load instruction
   
 ALU:
-  GREEN: IN1 for 4 tick operations
-  RED: IN2 for 4 tick operations
-  CRUDE_OIL: (3) add (CRUDE_OIL * IN1) + (CRUDE_OIL * IN2) to B/S
-  WATER: (3) add WATER / IN1 to B/S
-  STEAM: (3) add IN1 / STEAM to B/S
-  HEAVY_OIL: (3) add HEAVY_OIL % IN1 to B/S
-  LIGHT_OIL: (3) add IN1 % HEAVY_OIL to B/S
-  PETROLEUM: (3) add PETROLEUM AND IN1 to B/S
-  EMPTY_BARREL = 1: (4) add IN1 + IN2 to C/T
-  CRUDE_OIL_BARREL = 1: (4) add IN1 - IN2 to C/T
-  HEAVY_OIL_BARREL = 1: (4) add IN1 * IN2 to C/T
-  LIGHT_OIL_BARREL = 1: (4) add IN1 / IN2 to C/T
-  LUBRICANT_BARREL = 1: (4) add IN1 % IN2 to C/T
-  PETROLEUM_BARREL = 1: (4) add IN1 ^ IN2 to C/T
-  ACID_BARREL = 1: (4) add IN1 << IN2 to C/T
-  WATER_BARREL = 1: (4) add IN1 >> IN2 to C/T
-  ELECTRONIC_CIRCUIT = 1: (4) add IN1 AND IN2 to C/T
-  ADVANCED_CIRCUIT = 1: (4) add IN1 OR IN2 to C/T
-  PROCESSING_UNIT = 1: (4) add IN1 XOR IN2 to C/T
+  signal-green: IN1 for 4 tick operations
+  signal-red: IN2 for 4 tick operations
+  crude-oil: (3) add (crude-oil * IN1) + (crude-oil * IN2) to B/S
+  water: (3) add water / IN1 to B/S
+  steam: (3) add IN1 / steam to B/S
+  heavy-oil: (3) add heavy-oil % IN1 to B/S
+  light-oil: (3) add IN1 % light-oil to B/S
+  petroleum-gas: (3) add petroleum-gas AND IN1 to B/S
+  empty-barrel = 1: (4) add IN1 + IN2 to C/T
+  crude-oil-barrel = 1: (4) add IN1 - IN2 to C/T
+  heavy-oil-barrel = 1: (4) add IN1 * IN2 to C/T
+  light-oil-barrel = 1: (4) add IN1 / IN2 to C/T
+  lubricant-barrel = 1: (4) add IN1 % IN2 to C/T
+  petroleum-gas-barrel = 1: (4) add IN1 ^ IN2 to C/T
+  sulfuric-acid-barrel = 1: (4) add IN1 << IN2 to C/T
+  water-barrel = 1: (4) add IN1 >> IN2 to C/T
+  electronic-circuit = 1: (4) add IN1 AND IN2 to C/T
+  advanced-circuit = 1: (4) add IN1 OR IN2 to C/T
+  processing-unit = 1: (4) add IN1 XOR IN2 to C/T
   
 BRANCH CONTROL:
   L: address for is lower
