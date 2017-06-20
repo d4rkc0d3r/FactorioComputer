@@ -30,7 +30,7 @@ DIV a @b @c (3)
   water=a,X=b,T=c
 DIV @a b (3)
   steam=b,X=a,T=a
-DIV a @b @c (3)
+DIV @a b @c (3)
   steam=b,X=a,T=c
 DIV @a @b @c (4) generic
   light-oil-barrel=1
