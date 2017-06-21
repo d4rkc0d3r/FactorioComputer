@@ -4,7 +4,6 @@ RAM:
   2: A delayed by 2 ticks
   3: A delayed by 3 ticks
   D: data to write to A
-  E: D delayed by 1 tick
   R: address to write D to
   S: R delayed by 1 ticks
   T: R delayed by 2 ticks
