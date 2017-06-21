@@ -41,12 +41,10 @@ ALU:
   processing-unit = 1: (4) write IN1 XOR IN2 to instruction line as D
   
 BRANCH CONTROL:
-  L: address for is lower
-  E: address for is equal
-  G: address for is greater
+  L: offset address for is lower
+  E: offset address for is equal
+  G: offset address for is greater
   J: compare IN1 to J
   uranium-238: (3) compare IN1 to J
   uranium-235: (4) compare IN1 to IN2
-  N: (2) next instruction address
-  P: (3) next instruction address
-  Q: (4) next instruction address
+  N: (2) next instruction offset address
