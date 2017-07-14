@@ -26,7 +26,7 @@ MUL @a b @c (3)
   curde-oil=b,X=a,T=c
 MUL *$@a *$@b *$@c (4) generic
   heavy-oil-barrel=1
-DIV a @b @c (3)
+DIV $a @b @c (3)
   water=a,X=b,T=c
 DIV @a $b (3)
   steam=b,X=a,T=a
@@ -38,7 +38,7 @@ MOD $a @b @c (3)
   heavy-oil=a,X=b,T=c
 MOD @a $b (3)
   light-oil=b,X=a,T=a
-MOD a @b @c (3)
+MOD $a @b @c (3)
   light-oil=b,X=a,T=c
 MOD *$@a *$@b *$@c (4) generic
   lubrication-barrel=1
