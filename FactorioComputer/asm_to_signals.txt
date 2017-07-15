@@ -10,21 +10,21 @@ ADD @a $b (1)
   A=a,D=b
 ADD @a @b (2)
   1=a,Z=b
-ADD @a @b @c (3)
-  crude-oil=1,X=a,Y=b,T=c
-ADD *$@a *$@b *$@c (4) generic
+ADD $@a $@b @c (3)
+  crude-oil=1,X=a.a,Y=b.a,T=c,green=a.c,red=b.c
+ADD *$@a *$@b *@c (4) generic
   empty-barrel=1
 SUB @a $b (1)
   A=a,D=-b
 SUB @a @b (3)
   crude-oil=-1,X=b,T=a
-SUB *$@a *$@b *$@c (4) generic
+SUB *$@a *$@b *@c (4) generic
   crude-oil-barrel=1
 MUL @a $b (3)
   crude-oil=b,X=a,T=a
 MUL @a b @c (3)
   curde-oil=b,X=a,T=c
-MUL *$@a *$@b *$@c (4) generic
+MUL *$@a *$@b *@c (4) generic
   heavy-oil-barrel=1
 DIV $a @b @c (3)
   water=a,X=b,T=c
@@ -32,7 +32,7 @@ DIV @a $b (3)
   steam=b,X=a,T=a
 DIV @a $b @c (3)
   steam=b,X=a,T=c
-DIV *$@a *$@b *$@c (4) generic
+DIV *$@a *$@b *@c (4) generic
   light-oil-barrel=1
 MOD $a @b @c (3)
   heavy-oil=a,X=b,T=c
@@ -40,21 +40,21 @@ MOD @a $b (3)
   light-oil=b,X=a,T=a
 MOD $a @b @c (3)
   light-oil=b,X=a,T=c
-MOD *$@a *$@b *$@c (4) generic
+MOD *$@a *$@b *@c (4) generic
   lubrication-barrel=1
-POW *$@a *$@b *$@c (4) generic
+POW *$@a *$@b *@c (4) generic
   petroleum-gas-barrel=1
-LSHIFT *$@a *$@b *$@c (4) generic
+LSHIFT *$@a *$@b *@c (4) generic
   sulfuric-acid-barrel=1
-RSHIFT *$@a *$@b *$@c (4) generic
+RSHIFT *$@a *$@b *@c (4) generic
   water-barrel=1
 AND @a $b (3)
   petroleum-gas=b,X=a,T=a
 AND @a $b @c (3)
   petroleum-gas=b,X=a,T=c
-AND *$@a *$@b *$@c (4) generic
+AND *$@a *$@b *@c (4) generic
   electronic-circuit=1
-OR *$@a *$@b *$@c (4) generic
+OR *$@a *$@b *@c (4) generic
   advanced-circuit=1
-XOR *$@a *$@b *$@c (4) generic
+XOR *$@a *$@b *@c (4) generic
   processing-unit=1

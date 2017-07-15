@@ -19,13 +19,13 @@ RAM:
   piercing-shotgun-shell = 1: (2) read Y from IN2
   shotgun = 1: (2) read R from IN2
   combat-shotgun = 1: (2) read A from IN2
-  cannon-shell = 1: (1) read X from RAM2
+  cannon-shell = 1: (1) read X from @2
     explosive-cannon-shell = -1: (1) substract D from X
-  uranium-cannon-shell = 1: (1) read Y from RAM3
+  uranium-cannon-shell = 1: (1) read Y from @3
     explosive-uranium-cannon-shell = -1: (1) substract D from Y
-  rocket = 1: (1) read R from RAM4
+  rocket = 1: (1) read R from @4
     explosive-rocket = -1: (1) subtract D from R
-  firearm-magazine = 1: (1) read A from RAM4
+  firearm-magazine = 1: (1) read A from @4
     piercing-rounds-magazine = -1: (1) subtract D from A
   
 ROM:
