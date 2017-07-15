@@ -20,7 +20,9 @@ namespace FactorioComputer
 
         public bool Accepts(ASMParameter param)
         {
-            return (AllowConstant && param.IsConstant) || (AllowRegister && param.IsRegister) || (AllowPointer && param.IsPointer);
+            return (AllowConstant && param.IsConstant)
+                || (AllowRegister && param.IsRegister)
+                || (AllowPointer && param.IsPointer);
         }
 
         public static ASMParameterTemplate Parse(string str)
@@ -46,6 +48,16 @@ namespace FactorioComputer
                 }
             }
             return ret;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            if (AllowConstant) sb.Append('$');
+            if (AllowPointer) sb.Append('*');
+            if (AllowRegister) sb.Append('@');
+            sb.Append(Token);
+            return sb.ToString();
         }
     }
 }

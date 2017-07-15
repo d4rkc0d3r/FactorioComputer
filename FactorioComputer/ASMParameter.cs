@@ -13,5 +13,6 @@ namespace FactorioComputer
         public bool IsConstant;
         public bool IsRegister;
         public bool IsPointer;
+        public bool AddWrittenValue;
     }
 }
