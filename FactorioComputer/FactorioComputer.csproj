@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASMInstruction.cs" />
+    <Compile Include="ASMInstructionTemplate.cs" />
+    <Compile Include="ASMParameter.cs" />
+    <Compile Include="ASMParameterTemplate.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="NativeInstruction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
