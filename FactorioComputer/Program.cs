@@ -52,10 +52,7 @@ namespace FactorioComputer
             string source = "../../../prime_hand_optimized.asm";
             var compiler = new Compiler();
             compiler.LoadInstructionMap(ReadFrom("asm_to_signals.txt"));
-            foreach (string line in compiler.ResolveLabels(ReadFrom(source)))
-            {
-                Console.WriteLine(line);
-            }
+            Console.Write(compiler.Compile(compiler.ResolveLabels(ReadFrom(source))));
             Console.ReadKey();
         }
     }

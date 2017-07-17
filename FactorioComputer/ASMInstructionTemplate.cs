@@ -47,13 +47,13 @@ namespace FactorioComputer
                     string value = entry.Value.Replace("__LINE__", lineNumber.ToString());
                     for (int j = 0; j < parameter.Length; ++j)
                     {
-                        value = value.Replace(parameter[i].Token + ".a", instruction.Parameter[i].Value.ToString());
-                        value = value.Replace(parameter[i].Token + ".c", instruction.Parameter[i].Value.ToString());
-                        value = value.Replace(parameter[i].Token + ".o", instruction.Parameter[i].Offset.ToString());
+                        value = value.Replace(parameter[j].Token + ".a", instruction.Parameter[j].Value.ToString());
+                        value = value.Replace(parameter[j].Token + ".c", instruction.Parameter[j].Value.ToString());
+                        value = value.Replace(parameter[j].Token + ".o", instruction.Parameter[j].Offset.ToString());
                     }
                     for (int j = 0; j < parameter.Length; ++j)
                     {
-                        value = value.Replace(parameter[i].Token, instruction.Parameter[i].Value.ToString());
+                        value = value.Replace(parameter[j].Token, instruction.Parameter[j].Value.ToString());
                     }
                     result[i].Add(entry.Key, Program.ParseAdditionAndSubstraction(value));
                 }

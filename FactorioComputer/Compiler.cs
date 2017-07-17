@@ -69,6 +69,8 @@ namespace FactorioComputer
             {
                 foreach (ASMInstruction instruction in line.Split('|').Select(s => ASMInstruction.Parse(s.Trim())))
                 {
+                    if (instruction == null)
+                        continue;
                     var template = instructionMap.Where(t => t.Accepts(instruction)).OrderBy(t => t.Delay).FirstOrDefault();
                     int offset = 0;
                     foreach (var map in template.Compile(instruction, lineIndex + 1))

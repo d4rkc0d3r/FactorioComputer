@@ -25,6 +25,8 @@ namespace FactorioComputer
 
         public static ASMInstruction Parse(string str)
         {
+            if (string.IsNullOrEmpty(str))
+                return null;
             ASMInstruction instruction = new ASMInstruction();
             string[] split = str.Split(' ');
             if (split[0][0] == '+')

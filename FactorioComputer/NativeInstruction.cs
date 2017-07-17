@@ -28,14 +28,13 @@ namespace FactorioComputer
             return signals.Remove(signal);
         }
 
-        public string ToString(bool printLineNumber = false)
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            if (printLineNumber)
-                sb.Append(lineNumber).Append(':');
             foreach(var entry in signals)
                 sb.Append(entry.Key).Append('=').Append(entry.Value).Append(',');
-            sb.Remove(sb.Length - 1, 1); // remove last ','
+            if(signals.Count > 0)
+                sb.Remove(sb.Length - 1, 1); // remove last ','
             return sb.ToString();
         }
     }

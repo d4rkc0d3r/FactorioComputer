@@ -30,5 +30,15 @@ namespace FactorioComputer
                 lines[key] = value;
             }
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var instr in lines)
+            {
+                sb.Append(instr).AppendLine();
+            }
+            return sb.ToString();
+        }
     }
 }
