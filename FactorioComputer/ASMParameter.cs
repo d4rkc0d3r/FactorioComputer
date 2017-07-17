@@ -15,6 +15,23 @@ namespace FactorioComputer
         public bool IsPointer;
         public bool AddWrittenValue;
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            if (IsRegister)
+                sb.Append('@');
+            else if(IsPointer)
+                sb.Append('*');
+            sb.Append(Value);
+            if (Offset != 0)
+            {
+                if (Offset > 0)
+                    sb.Append('+');
+                sb.Append(Offset);
+            }
+            return sb.ToString();
+        }
+
         public static ASMParameter Parse(string str)
         {
             ASMParameter result = new ASMParameter();
@@ -25,13 +42,9 @@ namespace FactorioComputer
                     str = str.Substring(1);
                     int offsetIndex = str.IndexOf('-');
                     if (offsetIndex == -1)
-                    {
                         offsetIndex = str.IndexOf('+');
-                    }
                     if (offsetIndex == -1)
-                    {
                         result.Value = int.Parse(str);
-                    }
                     else
                     {
                         result.Value = int.Parse(str.Substring(0, offsetIndex));
