@@ -24,7 +24,7 @@ namespace FactorioComputer
         static void Main(string[] args)
         {
             var compiler = new Compiler();
-            compiler.LoadInstructionMap(ReadFrom("asm_to_signals.txt").GetEnumerator());
+            compiler.LoadInstructionMap(ReadFrom("asm_to_signals.txt"));
         }
     }
 }
