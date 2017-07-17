@@ -48,7 +48,7 @@ namespace FactorioComputer
                     dataList.Add(split[1]);
                     labels.Add(split[0], lineNumber.ToString());
                 }
-                lineNumber++;
+                ++lineNumber;
             }
             foreach (string line in dataList)
             {
@@ -59,6 +59,30 @@ namespace FactorioComputer
                 }
                 yield return output;
             }
+        }
+
+        public NativeProgram Compile(IEnumerable<string> data)
+        {
+            int lineNumber = 0;
+            NativeProgram program = new NativeProgram();
+            foreach (string line in data)
+            {
+                foreach (ASMInstruction instruction in line.Split('|').Select(s => ASMInstruction.Parse(s.Trim())))
+                {
+                    var template = instructionMap.Where(t => t.Accepts(instruction)).OrderBy(t => t.Delay).FirstOrDefault();
+                    int offset = 0;
+                    foreach (var map in template.Compile(instruction))
+                    {
+                        foreach (var entry in map)
+                        {
+                            program[lineNumber + offset].Add(entry.Key, entry.Value);
+                        }
+                        ++offset;
+                    }
+                }
+                ++lineNumber;
+            }
+            return program;
         }
     }
 }

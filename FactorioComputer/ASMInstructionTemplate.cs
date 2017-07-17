@@ -36,6 +36,13 @@ namespace FactorioComputer
             return true;
         }
 
+        public Dictionary<string, int>[] Compile(ASMInstruction instruction)
+        {
+            Dictionary<string, int>[] result = new Dictionary<string, int>[nativeInstructions.Count];
+            // TODO: implement actual compilation
+            return result;
+        }
+
         public static ASMInstructionTemplate Parse(string str)
         {
             var ret = new ASMInstructionTemplate();

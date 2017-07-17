@@ -16,6 +16,18 @@ namespace FactorioComputer
             this.lineNumber = lineNumber;
         }
 
+        public void Add(string signal, int value)
+        {
+            if (value == 0) // a 0 signal in Factorio is equal to no signal
+                return;
+            signals.Add(signal, value);
+        }
+
+        public bool Remove(string signal)
+        {
+            return signals.Remove(signal);
+        }
+
         public string ToString(bool printLineNumber = false)
         {
             StringBuilder sb = new StringBuilder();
