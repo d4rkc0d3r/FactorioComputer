@@ -13,19 +13,19 @@ ADD @a @b (2)
 ADD $@a $@b @c (3)
   crude-oil=1,X=a.a,Y=b.a,T=c,green=a.c,red=b.c
 ADD *$@a *$@b *@c (4) generic
-  empty-barrel=1
+  empty-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 SUB @a $b (1)
   A=a,D=-b
 SUB @a @b (3)
   crude-oil=-1,X=b,T=a
 SUB *$@a *$@b *@c (4) generic
-  crude-oil-barrel=1
+  crude-oil-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 MUL @a $b (3)
   crude-oil=b,X=a,T=a
 MUL @a b @c (3)
   crude-oil=b,X=a,T=c
 MUL *$@a *$@b *@c (4) generic
-  heavy-oil-barrel=1
+  heavy-oil-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 DIV $a @b @c (3)
   water=a,X=b,T=c
 DIV @a $b (3)
@@ -33,7 +33,7 @@ DIV @a $b (3)
 DIV @a $b @c (3)
   steam=b,X=a,T=c
 DIV *$@a *$@b *@c (4) generic
-  light-oil-barrel=1
+  light-oil-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 MOD $a @b @c (3)
   heavy-oil=a,X=b,T=c
 MOD @a $b (3)
@@ -41,23 +41,23 @@ MOD @a $b (3)
 MOD $a @b @c (3)
   light-oil=b,X=a,T=c
 MOD *$@a *$@b *@c (4) generic
-  lubrication-barrel=1
+  lubrication-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 POW *$@a *$@b *@c (4) generic
-  petroleum-gas-barrel=1
+  petroleum-gas-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 LSHIFT *$@a *$@b *@c (4) generic
-  sulfuric-acid-barrel=1
+  sulfuric-acid-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 RSHIFT *$@a *$@b *@c (4) generic
-  water-barrel=1
+  water-barrel=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 AND @a $b (3)
   petroleum-gas=b,X=a,T=a
 AND @a $b @c (3)
   petroleum-gas=b,X=a,T=c
 AND *$@a *$@b *@c (4) generic
-  electronic-circuit=1
+  electronic-circuit=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 OR *$@a *$@b *@c (4) generic
-  advanced-circuit=1
+  advanced-circuit=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 XOR *$@a *$@b *@c (4) generic
-  processing-unit=1
+  processing-unit=1,X=a.a,Y=b.a,U=c.a,green=a.c,red=b.c
 JMP $a (2)
   used-up-uranium-fuel-cell=-1,N=a
 JMP @a (3)

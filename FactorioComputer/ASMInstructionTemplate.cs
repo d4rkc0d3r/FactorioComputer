@@ -47,9 +47,10 @@ namespace FactorioComputer
                     string value = entry.Value.Replace("__LINE__", lineNumber.ToString());
                     for (int j = 0; j < parameter.Length; ++j)
                     {
-                        value = value.Replace(parameter[j].Token + ".a", instruction.Parameter[j].Value.ToString());
-                        value = value.Replace(parameter[j].Token + ".c", instruction.Parameter[j].Value.ToString());
-                        value = value.Replace(parameter[j].Token + ".o", instruction.Parameter[j].Offset.ToString());
+                        var p = instruction.Parameter[j];
+                        value = value.Replace(parameter[j].Token + ".a", p.IsRegister ? p.Value.ToString() : "0");
+                        value = value.Replace(parameter[j].Token + ".c", p.IsConstant ? p.Value.ToString() : "0");
+                        value = value.Replace(parameter[j].Token + ".o", p.IsPointer ? p.Offset.ToString() : "0");
                     }
                     for (int j = 0; j < parameter.Length; ++j)
                     {
