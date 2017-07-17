@@ -1,5 +1,5 @@
 RAMCLEAR (3)
-  signal-black=-1
+  black=-1
 MOV $a @b (1)
   R=b,D=a
 MOV @a @b (2)

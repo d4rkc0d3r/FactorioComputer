@@ -10,6 +10,16 @@ namespace FactorioComputer
     {
         private int lineNumber;
         private Dictionary<string, int> signals = new Dictionary<string, int>();
+        private Dictionary<string, string> wardenSignals = new Dictionary<string, string>
+        {
+            { "X", "yellow" },
+            { "Y", "pink" },
+            { "Z", "cyan" },
+            { "cannon-shell", "explosive-cannon-shell" },
+            { "uranium-cannon-shell", "explosive-uranium-cannon-shell" },
+            { "rocket", "explosive-rocket" },
+            { "firearm-magazine", "piercing-rounds-magazine" }
+        };
 
         public NativeInstruction(int lineNumber)
         {
@@ -21,6 +31,9 @@ namespace FactorioComputer
             if (value == 0) // a 0 signal in Factorio is equal to no signal
                 return;
             signals.Add(signal, value);
+            string warden;
+            if (wardenSignals.TryGetValue(signal, out warden))
+                signals.Add(warden, -1);
         }
 
         public bool Remove(string signal)
