@@ -58,3 +58,20 @@ OR *$@a *$@b *@c (4) generic
   advanced-circuit=1
 XOR *$@a *$@b *@c (4) generic
   processing-unit=1
+JMP $a (2)
+  used-up-uranium-fuel-cell=-1,N=a
+JMP @a (3)
+  uranium-fuel-cell=1,X=a
+  used-up-uranium-fuel-cell=-1
+JE @a $b $c (3)
+  uranium-238=1,X=a,J=b,E=c-i-3
+JG @a $b $c (3)
+  uranium-238=1,X=a,J=b,G=c-i-3
+JL @a $b $c (3)
+  uranium-238=1,X=a,J=b,L=c-i-3
+JE @a @b $c (4)
+  uranium-235=1,X=a,Y=b,E=c-i-4
+JG @a @b $c (4)
+  uranium-235=1,X=a,Y=b,G=c-i-4
+JL @a @b $c (4)
+  uranium-235=1,X=a,Y=b,L=c-i-4

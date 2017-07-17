@@ -25,7 +25,7 @@ namespace FactorioComputer
                 {
                     instruction.AddNativeInstructionTemplate(lines.Current.Substring(2));
                     if (!lines.MoveNext())
-                        return;
+                        return; // no newline on EOF :(
                 }
             }
         }
