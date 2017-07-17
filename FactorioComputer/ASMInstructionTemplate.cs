@@ -36,10 +36,28 @@ namespace FactorioComputer
             return true;
         }
 
-        public Dictionary<string, int>[] Compile(ASMInstruction instruction)
+        public Dictionary<string, int>[] Compile(ASMInstruction instruction, int lineNumber)
         {
             Dictionary<string, int>[] result = new Dictionary<string, int>[nativeInstructions.Count];
-            // TODO: implement actual compilation
+            for (int i = 0; i < result.Length; ++i)
+            {
+                result[i] = new Dictionary<string, int>();
+                foreach (var entry in nativeInstructions[i])
+                {
+                    string value = entry.Value.Replace("__LINE__", lineNumber.ToString());
+                    for (int j = 0; j < parameter.Length; ++j)
+                    {
+                        value = value.Replace(parameter[i].Token + ".a", instruction.Parameter[i].Value.ToString());
+                        value = value.Replace(parameter[i].Token + ".c", instruction.Parameter[i].Value.ToString());
+                        value = value.Replace(parameter[i].Token + ".o", instruction.Parameter[i].Offset.ToString());
+                    }
+                    for (int j = 0; j < parameter.Length; ++j)
+                    {
+                        value = value.Replace(parameter[i].Token, instruction.Parameter[i].Value.ToString());
+                    }
+                    result[i].Add(entry.Key, Program.ParseAdditionAndSubstraction(value));
+                }
+            }
             return result;
         }
 

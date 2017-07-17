@@ -63,7 +63,7 @@ namespace FactorioComputer
 
         public NativeProgram Compile(IEnumerable<string> data)
         {
-            int lineNumber = 0;
+            int lineIndex = 0;
             NativeProgram program = new NativeProgram();
             foreach (string line in data)
             {
@@ -71,16 +71,16 @@ namespace FactorioComputer
                 {
                     var template = instructionMap.Where(t => t.Accepts(instruction)).OrderBy(t => t.Delay).FirstOrDefault();
                     int offset = 0;
-                    foreach (var map in template.Compile(instruction))
+                    foreach (var map in template.Compile(instruction, lineIndex + 1))
                     {
                         foreach (var entry in map)
                         {
-                            program[lineNumber + offset].Add(entry.Key, entry.Value);
+                            program[lineIndex + offset].Add(entry.Key, entry.Value);
                         }
                         ++offset;
                     }
                 }
-                ++lineNumber;
+                ++lineIndex;
             }
             return program;
         }
