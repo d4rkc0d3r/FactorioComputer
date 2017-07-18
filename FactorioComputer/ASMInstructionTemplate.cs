@@ -48,9 +48,24 @@ namespace FactorioComputer
                     for (int j = 0; j < parameter.Length; ++j)
                     {
                         var p = instruction.Parameter[j];
-                        value = value.Replace(parameter[j].Token + ".a", p.IsRegister ? p.Value.ToString() : "0");
-                        value = value.Replace(parameter[j].Token + ".c", p.IsConstant ? p.Value.ToString() : "0");
-                        value = value.Replace(parameter[j].Token + ".o", p.IsPointer ? p.Offset.ToString() : "0");
+                        if (p.IsRegister)
+                        {
+                            value = value.Replace(parameter[j].Token + ".a", p.Value.ToString());
+                            value = value.Replace(parameter[j].Token + ".c", p.Offset.ToString());
+                            value = value.Replace(parameter[j].Token + ".p", "0");
+                        }
+                        else if (p.IsConstant)
+                        {
+                            value = value.Replace(parameter[j].Token + ".a", "0");
+                            value = value.Replace(parameter[j].Token + ".c", p.Value.ToString());
+                            value = value.Replace(parameter[j].Token + ".p", "0");
+                        }
+                        else // if (p.IsPointer)
+                        {
+                            value = value.Replace(parameter[j].Token + ".p", p.Value.ToString());
+                            value = value.Replace(parameter[j].Token + ".a", p.Offset.ToString());
+                            value = value.Replace(parameter[j].Token + ".c", "0");
+                        }
                     }
                     for (int j = 0; j < parameter.Length; ++j)
                     {
