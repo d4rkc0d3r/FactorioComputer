@@ -53,7 +53,17 @@ namespace FactorioComputer
                     break;
                 case '@':
                     result.IsRegister = true;
-                    result.Value = int.Parse(str.Substring(1));
+                    str = str.Substring(1);
+                    offsetIndex = str.IndexOf('-');
+                    if (offsetIndex == -1)
+                        offsetIndex = str.IndexOf('+');
+                    if (offsetIndex == -1)
+                        result.Value = int.Parse(str);
+                    else
+                    {
+                        result.Value = int.Parse(str.Substring(0, offsetIndex));
+                        result.Offset = int.Parse(str.Substring(offsetIndex));
+                    }
                     break;
                 default:
                     result.IsConstant = true;

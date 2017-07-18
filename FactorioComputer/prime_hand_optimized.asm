@@ -4,15 +4,15 @@ RAMCLEAR
 MOV 2 @1
 MOV 1 @2
 .OL:ADD @2 2
-DIV @2 2 @3 | MOV 3 @4
+
+MOD @2 3 @5
+MOV 3 @4
+MOV 9 @3
+
+.IL:JE @5 0 .OL | ADD @4 2
 MOD @2 @4 @5
-
-
-
-.IL:JE @5 0 .OL
-ADD @4 2
-MOD @2 @4 @5
-JL @4 @3 .IL
+POW @4-1 2 @3
+JL @3 @2 .IL
 
 
 
