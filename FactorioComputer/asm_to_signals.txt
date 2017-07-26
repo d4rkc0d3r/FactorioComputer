@@ -1,3 +1,5 @@
+NOP (1)
+  D=0
 RAMCLEAR (3)
   black=-1
 MOV $a @b (1)
